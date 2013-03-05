@@ -1,0 +1,14 @@
+# .gitignore for Data-Dumper
+/MANIFEST.bak
+/Makefile
+/Makefile.old
+/Data-Dumper-*.tar.gz
+/MYMETA.yml
+/blib
+/pm_to_blib
+/cover_db/
+/MYMETA.json
+/Dumper.bs
+/Dumper.c
+/Dumper.o
+
