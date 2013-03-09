@@ -24,7 +24,7 @@ $Data::Dumper::Indent=1;
     local $Data::Dumper::Useperl=1;
     local $Data::Dumper::Useqq=0;
     local $Data::Dumper::Deparse=0;
-    note('$Data::Dumper::Useperl => 1');
+    diag('$Data::Dumper::Useperl => 1');
     run_tests_for_pure_perl_implementations();
 }
 
@@ -32,7 +32,7 @@ $Data::Dumper::Indent=1;
     local $Data::Dumper::Useperl=0;
     local $Data::Dumper::Useqq=1;
     local $Data::Dumper::Deparse=0;
-    note('$Data::Dumper::Useqq => 1');
+    diag('$Data::Dumper::Useqq => 1');
     run_tests_for_pure_perl_implementations();
 }
     
@@ -40,7 +40,7 @@ $Data::Dumper::Indent=1;
     local $Data::Dumper::Useperl=0;
     local $Data::Dumper::Useqq=0;
     local $Data::Dumper::Deparse=1;
-    note('$Data::Dumper::Deparse => 1');
+    diag('$Data::Dumper::Deparse => 1');
     run_tests_for_pure_perl_implementations();
 }
     
@@ -57,7 +57,7 @@ sub run_tests_for_pure_perl_implementations {
     my @c = ( qw| eta theta | );
     my %d = ( iota => 'kappa' );
 
-    note('names not provided');
+    diag('names not provided');
     $obj = Data::Dumper->new([$a, $b]);
     $dumpstr = _dumptostr($obj);
     like($dumpstr,
@@ -86,7 +86,7 @@ sub run_tests_for_pure_perl_implementations {
         "Dump: one string, one undef"
     );
     
-    note('names provided');
+    diag('names provided');
     
     $obj = Data::Dumper->new([$a, $b], [ qw( a b ) ]);
     $dumpstr = _dumptostr($obj);

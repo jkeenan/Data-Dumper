@@ -25,7 +25,7 @@ $b = 'beta';
 @c = ( qw| gamma delta epsilon | );
 %d = ( zeta => 'eta', theta => 'iota' );
 
-note("Argument validation for new()");
+diag("Argument validation for new()");
 {
     local $@ = '';
     eval { my $obj = Data::Dumper->new(undef); };
@@ -45,7 +45,7 @@ note("Argument validation for new()");
 }
 
 {
-    note("\$Data::Dumper::Useperl, Useqq, Deparse");
+    diag("\$Data::Dumper::Useperl, Useqq, Deparse");
     my ($obj, %dumpstr);
 
     local $Data::Dumper::Useperl = 1;
@@ -71,7 +71,7 @@ note("Argument validation for new()");
 }
 
 {
-    note("\$Data::Dumper::Pad and \$obj->Pad");
+    diag("\$Data::Dumper::Pad and \$obj->Pad");
     my ($obj, %dumps, $pad);
     $obj = Data::Dumper->new([$a,$b]);
     $dumps{'noprev'} = _dumptostr($obj);
@@ -108,7 +108,7 @@ note("Argument validation for new()");
 }
 
 {
-    note("\$Data::Dumper::Varname and \$obj->Varname");
+    diag("\$Data::Dumper::Varname and \$obj->Varname");
     my ($obj, %dumps, $varname);
     $obj = Data::Dumper->new([$a,$b]);
     $dumps{'noprev'} = _dumptostr($obj);
@@ -150,7 +150,7 @@ note("Argument validation for new()");
 }
 
 {
-    note("\$Data::Dumper::Useqq and \$obj->Useqq");
+    diag("\$Data::Dumper::Useqq and \$obj->Useqq");
     my ($obj, %dumps, $useqq);
     $obj = Data::Dumper->new([$a,$b]);
     $dumps{'noprev'} = _dumptostr($obj);

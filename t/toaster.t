@@ -35,11 +35,11 @@ SKIP: {
 }
 
 sub run_tests_for_toaster {
-    note("\$Data::Dumper::Useperl = $Data::Dumper::Useperl");
+    diag("\$Data::Dumper::Useperl = $Data::Dumper::Useperl");
 
     my ($obj, %dumps, $toaster, $starting);
 
-    note("\$Data::Dumper::Toaster and Toaster() set to true value");
+    diag("\$Data::Dumper::Toaster and Toaster() set to true value");
 
     $starting = $Data::Dumper::Toaster;
     $toaster = 1;

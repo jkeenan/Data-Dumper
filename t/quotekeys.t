@@ -35,11 +35,11 @@ SKIP: {
 }
 
 sub run_tests_for_quotekeys {
-    note("\$Data::Dumper::Useperl = $Data::Dumper::Useperl");
+    diag("\$Data::Dumper::Useperl = $Data::Dumper::Useperl");
 
     my ($obj, %dumps, $quotekeys, $starting);
 
-    note("\$Data::Dumper::Quotekeys and Quotekeys() set to true value");
+    diag("\$Data::Dumper::Quotekeys and Quotekeys() set to true value");
 
     $obj = Data::Dumper->new( [ \%d ] );
     $dumps{'ddqkdefault'} = _dumptostr($obj);
@@ -84,7 +84,7 @@ sub run_tests_for_quotekeys {
     $obj->Quotekeys($quotekeys);
     $dumps{'objqkundef'} = _dumptostr($obj);
 
-    note("Quotekeys(undef) will fall back to the default value\nfor \$Data::Dumper::Quotekeys, which is a true value.");
+    diag("Quotekeys(undef) will fall back to the default value\nfor \$Data::Dumper::Quotekeys, which is a true value.");
     isnt($dumps{'ddqkundef'}, $dumps{'objqkundef'},
         "\$Data::Dumper::Quotekeys = undef and Quotekeys(undef) are equivalent");
     isnt($dumps{'ddqkzero'}, $dumps{'objqkundef'},

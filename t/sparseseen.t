@@ -35,11 +35,11 @@ SKIP: {
 }
 
 sub run_tests_for_sparseseen {
-    note("\$Data::Dumper::Useperl = $Data::Dumper::Useperl");
+    diag("\$Data::Dumper::Useperl = $Data::Dumper::Useperl");
 
     my ($obj, %dumps, $sparseseen, $starting);
 
-    note("\$Data::Dumper::Sparseseen and Sparseseen() set to true value");
+    diag("\$Data::Dumper::Sparseseen and Sparseseen() set to true value");
 
     $starting = $Data::Dumper::Sparseseen;
     $sparseseen = 1;

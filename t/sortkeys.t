@@ -28,7 +28,7 @@ SKIP: {
 }
 
 sub run_tests_for_sortkeys {
-    note("\$Data::Dumper::Useperl = $Data::Dumper::Useperl");
+    diag("\$Data::Dumper::Useperl = $Data::Dumper::Useperl");
 
     my %d = (
         delta   => 'd',
@@ -40,7 +40,7 @@ sub run_tests_for_sortkeys {
     {
         my ($obj, %dumps, $sortkeys, $starting);
     
-        note("\$Data::Dumper::Sortkeys and Sortkeys() set to true value");
+        diag("\$Data::Dumper::Sortkeys and Sortkeys() set to true value");
     
         $starting = $Data::Dumper::Sortkeys;
         $sortkeys = 1;
@@ -65,7 +65,7 @@ sub run_tests_for_sortkeys {
     {
         my ($obj, %dumps, $starting);
     
-        note("\$Data::Dumper::Sortkeys and Sortkeys() set to coderef");
+        diag("\$Data::Dumper::Sortkeys and Sortkeys() set to coderef");
     
         $starting = $Data::Dumper::Sortkeys;
         local $Data::Dumper::Sortkeys = \&reversekeys;
@@ -89,7 +89,7 @@ sub run_tests_for_sortkeys {
     {
         my ($obj, %dumps, $starting);
     
-        note("\$Data::Dumper::Sortkeys and Sortkeys() set to coderef with filter");
+        diag("\$Data::Dumper::Sortkeys and Sortkeys() set to coderef with filter");
         $starting = $Data::Dumper::Sortkeys;
         local $Data::Dumper::Sortkeys = \&reversekeystrim;
         $obj = Data::Dumper->new( [ \%d ] );
@@ -115,7 +115,7 @@ sub run_tests_for_sortkeys {
     {
         my ($obj, %dumps, $sortkeys, $starting);
     
-        note("\$Data::Dumper::Sortkeys(undef) and Sortkeys(undef)");
+        diag("\$Data::Dumper::Sortkeys(undef) and Sortkeys(undef)");
     
         $starting = $Data::Dumper::Sortkeys;
         $sortkeys = 0;
@@ -148,7 +148,7 @@ sub run_tests_for_sortkeys {
     
     }
     
-    note("Internal subroutine _sortkeys");
+    diag("Internal subroutine _sortkeys");
     my %e = (
         nu      => 'n',
         lambda  => 'l',

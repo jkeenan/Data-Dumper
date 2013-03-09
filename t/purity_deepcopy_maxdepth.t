@@ -23,7 +23,7 @@ use Testing qw( _dumptostr );
 my ($a, $b, $c, @d);
 my ($d, $e, $f);
 
-note("\$Data::Dumper::Purity and Purity()");
+diag("\$Data::Dumper::Purity and Purity()");
 
 {
     my ($obj, %dumps, $purity);
@@ -40,7 +40,7 @@ note("\$Data::Dumper::Purity and Purity()");
     $obj = Data::Dumper->new([$a,$b,$c], [qw(a b c)]);
     $dumps{'noprev'} = _dumptostr($obj);
 
-    note("Discrepancy between Dumpxs() and Dumpperl() behavior with respect to \$Data::Dumper::Purity = undef");
+    diag("Discrepancy between Dumpxs() and Dumpperl() behavior with respect to \$Data::Dumper::Purity = undef");
     local $Data::Dumper::Useperl = 1;
     $purity = undef;
     local $Data::Dumper::Purity = $purity;
@@ -161,7 +161,7 @@ note("\$Data::Dumper::Purity and Purity()");
         "\$Data::Dumper::Purity = 1 and Purity(1) are equivalent");
 }
 
-note("\$Data::Dumper::Deepcopy and Deepcopy()");
+diag("\$Data::Dumper::Deepcopy and Deepcopy()");
 
 {
     my ($obj, %dumps, $deepcopy);
@@ -297,7 +297,7 @@ note("\$Data::Dumper::Deepcopy and Deepcopy()");
         "\$Data::Dumper::Deepcopy = 1 and Deepcopy(1) are equivalent");
 }
 
-note("\$Data::Dumper::Maxdepth and Maxdepth()");
+diag("\$Data::Dumper::Maxdepth and Maxdepth()");
 
 {
     # Adapted from Dumper.pm POD
@@ -311,7 +311,7 @@ note("\$Data::Dumper::Maxdepth and Maxdepth()");
     $e = { 'd' => $d };
     $f = { 'e' => $e };
 
-    note("Discrepancy between Dumpxs() and Dumpperl() behavior with respect to \$Data::Dumper::Maxdepth = undef");
+    diag("Discrepancy between Dumpxs() and Dumpperl() behavior with respect to \$Data::Dumper::Maxdepth = undef");
     local $Data::Dumper::Useperl = 1;
 
     $obj = Data::Dumper->new([$f], [qw(f)]);
@@ -351,7 +351,7 @@ note("\$Data::Dumper::Maxdepth and Maxdepth()");
     $e = { 'd' => $d };
     $f = { 'e' => $e };
 
-    note("Discrepancy between Dumpxs() and Dumpperl() behavior with respect to \$Data::Dumper::Maxdepth = undef");
+    diag("Discrepancy between Dumpxs() and Dumpperl() behavior with respect to \$Data::Dumper::Maxdepth = undef");
     local $Data::Dumper::Useperl = 1;
 
     $obj = Data::Dumper->new([$f], [qw(f)]);

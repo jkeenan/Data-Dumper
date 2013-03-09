@@ -37,7 +37,7 @@ SKIP: {
 sub run_tests_for_bless_var_method {
     my ($obj, %dumps, $bless, $starting);
 
-    note("\$Data::Dumper::Bless and Bless() set to true value");
+    diag("\$Data::Dumper::Bless and Bless() set to true value");
 
     $starting = $Data::Dumper::Bless;
     $bless = 1;

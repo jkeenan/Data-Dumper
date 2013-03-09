@@ -22,7 +22,7 @@ use Testing qw( _dumptostr );
 # Thanks to Arthur Axel "fREW" Schmidt:
 # http://search.cpan.org/~frew/Data-Dumper-Concise-2.020/lib/Data/Dumper/Concise.pm
 
-note("\$Data::Dumper::Deparse and Deparse()");
+diag("\$Data::Dumper::Deparse and Deparse()");
 
 {
     my ($obj, %dumps, $deparse, $starting);
